@@ -13,16 +13,14 @@ public class WaypointMovement : MonoBehaviour
 	[SerializeField] private int _waypointIndex = 0;
 	[SerializeField] private float _moveTime;
 
-	//Bilo bi fora: napraviti flipanje sprajta, da se zrcali i animira u drugom smjeru
-
 	private void Update()
 	{
 		if (Time.time < _moveTime)
 			return;
 
-		_targetTransform.position = Vector3.MoveTowards(_targetTransform.position, _waypoints[_waypointIndex].position, _speed * Time.deltaTime);
+		_targetTransform.position = Vector2.MoveTowards(_targetTransform.position, _waypoints[_waypointIndex].position, _speed * Time.deltaTime);
 
-		float distanceToTarget = Vector3.Distance(_targetTransform.position, _waypoints[_waypointIndex].position);
+		float distanceToTarget = Vector2.Distance(_targetTransform.position, _waypoints[_waypointIndex].position);
 
 		if(distanceToTarget <= Mathf.Epsilon)
 		{
@@ -37,6 +35,23 @@ public class WaypointMovement : MonoBehaviour
 
 			_moveTime = Time.time + _waitAtWaypointDuration;
 		}
+
+        if (_waypointIndex == 3)
+        {
+			Vector3 localScale = transform.localScale;
+			localScale.x = -1.0f;
+
+			transform.localScale = localScale;
+		}
+
+		if (_waypointIndex == 1)
+		{
+			Vector3 localScale = transform.localScale;
+			localScale.x = 1.0f;
+
+			transform.localScale = localScale;
+		}
+
 	}
 
 	private void OnDrawGizmos()
