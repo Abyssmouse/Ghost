@@ -4,9 +4,7 @@ using UnityEngine;
 
 public class ChestInteraction : MonoBehaviour
 {
-	private bool _isUsed;
-	private bool _isEmpty;
-
+	public bool isUsed;
 
 	private Animator _animator;
 
@@ -25,6 +23,7 @@ public class ChestInteraction : MonoBehaviour
 		if (other.tag == "Player")
 		{
 			_animator.SetBool("IsUsed", true);
+			isUsed = true;
 		}
 	}
 }

@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
         //IsWalking bool ne radi za vertikalno jos, bug jer dva puta u isto vrijeme može vratit true?
 
-        if (_horizontalMovement != 0.0f) ;
+        if (_horizontalMovement != 0.0f)
         {
             _animator.SetBool("IsWalking", _horizontalMovement != 0.0f);
         }
