@@ -39,14 +39,13 @@ public class ExitScript : MonoBehaviour
 			_playerText.GetComponent<TextMesh>().text = "The door is locked!";
 			return;
 		}
+			int totalBuildIndex = SceneManager.sceneCountInBuildSettings;
+			int currentSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
+			SceneManager.LoadScene(currentSceneBuildIndex + 1);
 
-		int totalBuildIndex = SceneManager.sceneCountInBuildSettings;
-		int currentSceneBuildIndex = SceneManager.GetActiveScene().buildIndex;
-		SceneManager.LoadScene(currentSceneBuildIndex + 1);
-
-		if (currentSceneBuildIndex == (totalBuildIndex - 1))
-		{
-			//SceneManager.LoadScene("MainMenu");
-		}
+			if (currentSceneBuildIndex == (totalBuildIndex - 1))
+			{
+				SceneManager.LoadScene("MainMenu");
+			}
 	}
 }
