@@ -463,6 +463,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8969342859210984618, guid: d68dde9f2944a6747b272db83cc32a4d, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8969342859817701915, guid: d68dde9f2944a6747b272db83cc32a4d, type: 3}
       propertyPath: m_Name
       value: LevelGrid
@@ -1151,6 +1155,10 @@ PrefabInstance:
     - target: {fileID: 1846464361938002826, guid: 51b572f51ef659d49afa387117203b0a, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8388265451946158072, guid: 51b572f51ef659d49afa387117203b0a, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 51b572f51ef659d49afa387117203b0a, type: 3}
