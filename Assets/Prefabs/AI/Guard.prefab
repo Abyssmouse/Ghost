@@ -175,6 +175,7 @@ GameObject:
   - component: {fileID: 7097591236861551161}
   - component: {fileID: 908384157019239921}
   - component: {fileID: 5045485477695912215}
+  - component: {fileID: -3600277987079258053}
   m_Layer: 0
   m_Name: Guard
   m_TagString: Guard
@@ -341,12 +342,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b0d4f789472f0e47899aea6bdcc858f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
   _flipCheckStart: {fileID: 8129198801660104952}
   _flipCheckEnd: {fileID: 7774641644705571446}
   _flipLayerMask:
     serializedVersion: 2
     m_Bits: 64
   _speed: 3.5
+--- !u!114 &-3600277987079258053
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3450211457316205355}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c0941fdfcb59a3641b191077e541d15a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  Speed: 4
 --- !u!1 &6007025987930526503
 GameObject:
   m_ObjectHideFlags: 0
@@ -357,6 +373,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2316369551093438632}
   - component: {fileID: 4567038214534100847}
+  - component: {fileID: 8910267190739613042}
   m_Layer: 0
   m_Name: DetectionTrigger
   m_TagString: Untagged
@@ -394,3 +411,17 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 5
+--- !u!114 &8910267190739613042
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6007025987930526503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07d480ad0aef91e409b3cfab9b0feaec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ActivatedScriptName: TargetMover
+  DeactivatedScriptName: HorizontalMover

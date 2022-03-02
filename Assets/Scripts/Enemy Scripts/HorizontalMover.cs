@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class HorizontalMover : MonoBehaviour
+public class HorizontalMover : MoverBehaviour
 {
 	[SerializeField] private Transform _flipCheckStart;
 	[SerializeField] private Transform _flipCheckEnd;
@@ -16,7 +16,7 @@ public class HorizontalMover : MonoBehaviour
 
 	private float _xDirection = 1.0f;
 
-	private void Awake()
+	private void Start()
 	{
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		

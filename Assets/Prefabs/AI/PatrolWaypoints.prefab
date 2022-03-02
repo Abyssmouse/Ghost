@@ -245,6 +245,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8910267190739613042, guid: 3843c862aaa871a4694f372859de71c4, type: 3}
+      propertyPath: DeactivatedScriptName
+      value: WaypointMovement
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5045485477695912215, guid: 3843c862aaa871a4694f372859de71c4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3843c862aaa871a4694f372859de71c4, type: 3}
@@ -270,6 +274,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 393202afee3287b44b91c3589701f285, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Target: {fileID: 0}
   _targetTransform: {fileID: 3027403002046622154}
   _speed: 3.5
   _waitAtWaypointDuration: 1.5
