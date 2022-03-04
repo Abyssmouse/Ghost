@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private Transform _transform;
     private Animator _animator;
     private string _playerTag = "Player";
+    private Transform _textMeshTransform = null;
 
     // Start is called before the first frame update
     void Awake()
@@ -24,6 +25,19 @@ public class PlayerMovement : MonoBehaviour
         _transform = transform;
         _animator = GetComponent<Animator>();
         GameObject player = GameObject.FindGameObjectWithTag(_playerTag);
+    }
+
+    private void Start()
+    {
+        for (int i = 0; i < transform.childCount; ++i)
+        {
+            Transform t = transform.GetChild(i);
+            if (t.name == "PlayerText")
+            {
+                _textMeshTransform = t;
+                break;
+            }
+        }
     }
 
     // Update is called once per frame
@@ -67,5 +81,10 @@ public class PlayerMovement : MonoBehaviour
 		*/
 
         _transform.localScale = localScale;
+
+        if (_textMeshTransform != null)
+        {
+            _textMeshTransform.localScale = localScale;
+        }
     }
 }

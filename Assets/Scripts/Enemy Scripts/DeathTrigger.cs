@@ -11,15 +11,11 @@ public class DeathTrigger : MonoBehaviour
 			return;
 		}
 
-        PlayerLives playerLives = other.GetComponent<PlayerLives>();
+        PlayerDeath playerDeath = other.GetComponent<PlayerDeath>();
 
-        if (playerLives != null)
+        if (playerDeath != null)
         {
-            playerLives.Die();
-        }
-        else
-        {
-            Destroy(other.gameObject);
+            playerDeath.Die();
         }
     }
 }

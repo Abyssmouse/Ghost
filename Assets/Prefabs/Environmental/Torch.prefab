@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 917588234}
   - component: {fileID: 917588236}
-  - component: {fileID: 917588235}
   m_Layer: 0
   m_Name: TorchLight
   m_TagString: Untagged
@@ -83,22 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &917588235
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 917588233}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 3
 --- !u!1 &5200118238046085911
 GameObject:
   m_ObjectHideFlags: 0
@@ -109,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2630804794198111507}
   - component: {fileID: 1412958730807722949}
+  - component: {fileID: 933400654827026981}
   m_Layer: 0
   m_Name: OuterTrigger
   m_TagString: Untagged
@@ -146,6 +130,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 3
+--- !u!114 &933400654827026981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5200118238046085911}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9cbdcddbd5851449f7a8b48f03a8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5617231474404083404
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,6 +284,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2313949243623094718}
   - component: {fileID: 9125861555484029392}
+  - component: {fileID: 903522074434984399}
   m_Layer: 0
   m_Name: InnerTrigger
   m_TagString: Untagged
@@ -325,3 +322,15 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.5
+--- !u!114 &903522074434984399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8600176087235428160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a9cbdcddbd5851449f7a8b48f03a8ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

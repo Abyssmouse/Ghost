@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WaypointMovement : MoverBehaviour
 {
+	private Transform _textMeshTransform = null;
 	[SerializeField] private Transform _targetTransform;
 	[SerializeField] private float _speed = 2.5f;
 	[SerializeField] private float _waitAtWaypointDuration = 1.5f;
@@ -12,13 +13,32 @@ public class WaypointMovement : MoverBehaviour
 	[Header("Read-only")]
 	[SerializeField] private int _waypointIndex = 0;
 	[SerializeField] private float _moveTime;
+	[SerializeField] private Animator _animator;
 
+	void Awake()
+	{
+		_animator = GetComponent<Animator>();
+	}
+
+	private void Start()
+	{
+		for (int i = 0; i < transform.childCount; ++i)
+		{
+			Transform t = transform.GetChild(i);
+			if (t.name == "GuardText")
+			{
+				_textMeshTransform = t;
+				break;
+			}
+		}
+	}
 	private void Update()
 	{
 		if (Time.time < _moveTime)
 			return;
 
 		_targetTransform.position = Vector2.MoveTowards(_targetTransform.position, _waypoints[_waypointIndex].position, _speed * Time.deltaTime);
+		_animator.SetBool("IsWalking", true);
 
 		float distanceToTarget = Vector2.Distance(_targetTransform.position, _waypoints[_waypointIndex].position);
 
@@ -34,6 +54,7 @@ public class WaypointMovement : MoverBehaviour
 			//}
 
 			_moveTime = Time.time + _waitAtWaypointDuration;
+			_animator.SetBool("IsWalking", false);
 		}
 
         if (_waypointIndex == 3)
@@ -42,6 +63,10 @@ public class WaypointMovement : MoverBehaviour
 			localScale.x = -1.0f;
 
 			transform.localScale = localScale;
+			if (_textMeshTransform != null)
+			{
+				_textMeshTransform.localScale = localScale;
+			}
 		}
 
 		if (_waypointIndex == 1)
@@ -50,6 +75,10 @@ public class WaypointMovement : MoverBehaviour
 			localScale.x = 1.0f;
 
 			transform.localScale = localScale;
+			if (_textMeshTransform != null)
+			{
+				_textMeshTransform.localScale = localScale;
+			}
 		}
 
 	}

@@ -6,11 +6,13 @@ public class TargetMover : MoverBehaviour
 {
 	public float Speed = 4.0f;
 	private Rigidbody2D _rigidbody2D = null;
+	private TextMesh _guardText;
 
 	// Start is called before the first frame update
 	void Start()
 	{
 		_rigidbody2D = GetComponent<Rigidbody2D>();
+		_guardText = GetComponentInChildren<TextMesh>();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +22,8 @@ public class TargetMover : MoverBehaviour
 		{
 			return;
 		}
+
+		_guardText.text = "Halt!";
 
 		Vector3 toTarget = Target.transform.position - transform.position;
 		toTarget.z = 0.0f;
