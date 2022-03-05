@@ -4,20 +4,27 @@ using UnityEngine;
 
 public class TargetMover : MoverBehaviour
 {
+	[SerializeField] private Animator _animator;
 	public float Speed = 4.0f;
 	private Rigidbody2D _rigidbody2D = null;
 	private TextMesh _guardText;
+	public float _timetoClearText = 5.0f;
 
-	// Start is called before the first frame update
 	void Start()
 	{
+		_timetoClearText = Time.time;
+	}
+
+	void Awake()
+	{
+		_animator = GetComponent<Animator>();
 		_rigidbody2D = GetComponent<Rigidbody2D>();
 		_guardText = GetComponentInChildren<TextMesh>();
 	}
-	
-	// Update is called once per frame
+
 	void Update()
     {
+
 		if (Target == null)
 		{
 			return;
@@ -25,11 +32,26 @@ public class TargetMover : MoverBehaviour
 
 		_guardText.text = "Halt!";
 
+		if (_timetoClearText <= 0.0f)
+		{
+			_timetoClearText = 5.0f;
+			_guardText.text = "";
+		}
+
 		Vector3 toTarget = Target.transform.position - transform.position;
 		toTarget.z = 0.0f;
 		toTarget.Normalize();
 
 		transform.position += toTarget * Speed * Time.deltaTime;
+		_animator.SetBool("IsWalking", true);
+
+		if (Target.transform.position.x <= transform.position.x)
+        {
+			Vector3 localScale = transform.localScale;
+			localScale.x = -1.0f;
+			transform.localScale = localScale;
+		}
+	
 
 	}
 }

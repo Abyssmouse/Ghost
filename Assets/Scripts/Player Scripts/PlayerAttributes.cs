@@ -4,16 +4,25 @@ using UnityEngine;
 
 public class PlayerAttributes : MonoBehaviour
 {
-    public float _playerVisibility = 0.0f;
-    
+    public float PlayerVisibility = 0.0f;
+    private string _triggerTag = "DetectionTrigger";
+    private CircleCollider2D _circleCollider2D;
+
+    private void Awake()
+    {
+        GameObject DetectionTrigger = GameObject.FindGameObjectWithTag(_triggerTag);
+        _circleCollider2D = DetectionTrigger.GetComponent<CircleCollider2D>();
+    }
+
     public void VisibilityInc()
     {
-        _playerVisibility += 0.5f;
+        PlayerVisibility += 1.0f;
+        _circleCollider2D.radius += 1.0f;
     }
 
     public void VisibilityDec()
     {
-        _playerVisibility -= 0.5f;
+        PlayerVisibility -= 1.0f;
+        _circleCollider2D.radius -= 1.0f;
     }
-
 }

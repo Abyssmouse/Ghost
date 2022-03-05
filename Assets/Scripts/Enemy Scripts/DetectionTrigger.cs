@@ -6,6 +6,13 @@ public class DetectionTrigger : MonoBehaviour
 {
 	public string ActivatedScriptName = "TargetMover";
 	public string DeactivatedScriptName = "";
+	private CircleCollider2D _triggerRadius;
+		
+	private void Awake()
+    {
+		_triggerRadius = GetComponent<CircleCollider2D>();
+	}
+
 
 	private void ToggleBehaviour(string active, string deactive, Component target)
 	{

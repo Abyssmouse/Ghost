@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private string _playerTag = "Player";
     private Transform _textMeshTransform = null;
 
+
     // Start is called before the first frame update
     void Awake()
     {

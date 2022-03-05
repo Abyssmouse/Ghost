@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Guard
   - PlayerText
+  - DetectionTrigger
   layers:
   - Default
   - TransparentFX

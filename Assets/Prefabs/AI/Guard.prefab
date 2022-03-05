@@ -407,7 +407,7 @@ GameObject:
   - component: {fileID: 8910267190739613042}
   m_Layer: 0
   m_Name: DetectionTrigger
-  m_TagString: Untagged
+  m_TagString: DetectionTrigger
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -441,7 +441,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.75
+  m_Radius: 4
 --- !u!114 &8910267190739613042
 MonoBehaviour:
   m_ObjectHideFlags: 0
