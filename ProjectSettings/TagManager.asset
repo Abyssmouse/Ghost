@@ -7,6 +7,7 @@ TagManager:
   - Guard
   - PlayerText
   - DetectionTrigger
+  - UIVisibility
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class TargetMover : MoverBehaviour
 	private Rigidbody2D _rigidbody2D = null;
 	private TextMesh _guardText;
 	public float _timetoClearText = 5.0f;
+	private Transform _textMeshTransform = null;
 
 	void Start()
 	{
@@ -51,7 +52,11 @@ public class TargetMover : MoverBehaviour
 			localScale.x = -1.0f;
 			transform.localScale = localScale;
 		}
-	
+
+
+
+
+
 
 	}
 }
