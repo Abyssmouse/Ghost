@@ -7,6 +7,7 @@ public class TextTriggerScript : MonoBehaviour
     // Placed on a empty trigger game object to use the colliders child text component
 
     private GameObject _playerText;
+    private bool _onetime = false;
 
     [TextArea]
     public string Message;
@@ -25,6 +26,10 @@ public class TextTriggerScript : MonoBehaviour
             return;
         }
 
-        _playerText.GetComponent<TextMesh>().text = Message;
+        if (!_onetime)
+        {
+           _onetime = true;
+            _playerText.GetComponent<TextMesh>().text = Message;
+        }
     }
 }

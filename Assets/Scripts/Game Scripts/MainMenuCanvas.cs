@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenuCanvas : MonoBehaviour
 {
 
-    public string FirstSceneName = "Sandbox";
+    public string FirstSceneName = "Level01";
 
         public void Play()
         {
