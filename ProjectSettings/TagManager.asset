@@ -8,6 +8,7 @@ TagManager:
   - PlayerText
   - DetectionTrigger
   - UIVisibility
+  - GuardText
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - Water
   - UI
   - Bounds
-  - 
+  - Text
   - 
   - 
   - 

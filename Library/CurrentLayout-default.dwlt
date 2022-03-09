@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 471}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,7 +46,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 471}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_MinSize: {x: 910, y: 421}
   m_MaxSize: {x: 22005, y: 10021}
   vertical: 0
-  controlID: 27426
+  controlID: 375
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 421}
   m_MaxSize: {x: 4001, y: 8021}
   vertical: 1
-  controlID: 27427
+  controlID: 376
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -319,7 +319,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
@@ -409,9 +409,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -2.2078285, y: 6.4364133, z: -34.94792}
+    m_Target: {x: -5.258689, y: 4.5891876, z: -51.271538}
     speed: 2
-    m_Value: {x: -2.2078285, y: 6.4364133, z: -34.94792}
+    m_Value: {x: -5.258689, y: 4.5891876, z: -51.271538}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -462,9 +462,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.497279
+    m_Target: 10.651005
     speed: 2
-    m_Value: 9.497279
+    m_Value: 10.651005
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -653,7 +653,7 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -54218
+  m_LastSelectedObjectID: -4722
 --- !u!114 &17
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -713,9 +713,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6c120000
+      m_SelectedIDs: cc430000
       m_LastClickedID: 0
-      m_ExpandedIDs: 6649ffffca49ffff1e4affffa651ffffe053ffffb65dfffffe6effffca6fffff2472ffffa476ffff1e7fffff0aa0ffff72a0ffff78a0ffff7aa0ffff7ca4ffffa8aeffff04afffffdab0ffff2ab1fffff0b1ffffd8b5ffff04b6ffffa2b6ffff32fafffff2faffff42fbfffffc420000204300003243000002750000387500004279000060840000b0840000568a0000dc8c0000e88c00000a8d0000
+      m_ExpandedIDs: eab9ffffa0edffff08eeffffd6eeffff70f0ffffd4f8ffff42fbfffff65d0000045e0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -777,7 +777,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Game Scripts
+    - Assets/Prefabs
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 0
@@ -791,7 +791,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: cc3e0000
     m_LastClickedID: 16076
-    m_ExpandedIDs: ffffffff00000000de450000e0450000e2450000e4450000e6450000e8450000ea450000ec450000ee450000324600003c46000042460000b24c000044660000586600006c6b0000
+    m_ExpandedIDs: ffffffff000000004c4600004e46000050460000524600005446000056460000584600005a4600005c4600005e46000060460000624600006446000066460000684600006a4600006c4600006e460000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -819,21 +819,21 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000de450000e0450000e2450000e4450000e6450000e8450000ea450000ec450000ee450000324600003c46000042460000b24c000044660000586600006c6b0000
+    m_ExpandedIDs: ffffffff000000004c4600004e46000050460000524600005446000056460000584600005a4600005c4600005e46000060460000624600006446000066460000684600006a4600006c4600006e460000d0460000d646000028730000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: PatrolWaypoints
+      m_OriginalName: PatrolWaypoints
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 17352
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 

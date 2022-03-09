@@ -141,9 +141,10 @@ GameObject:
   - component: {fileID: 652185434630304494}
   - component: {fileID: 5782510968590785271}
   - component: {fileID: 2410236442201842244}
+  - component: {fileID: 8148552578021007146}
   m_Layer: 0
   m_Name: GuardText
-  m_TagString: Untagged
+  m_TagString: GuardText
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -230,6 +231,18 @@ TextMesh:
   m_Color:
     serializedVersion: 2
     rgba: 4294967295
+--- !u!114 &8148552578021007146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2499078470153665461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54285a9c51832af4f84dbfe90812ffea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3450211457316205355
 GameObject:
   m_ObjectHideFlags: 0
@@ -309,7 +322,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 623331347
   m_SortingLayer: 1
-  m_SortingOrder: 4
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 6c55f7c4fe9daf342ae812653af2cfa5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
