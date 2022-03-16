@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Text LevelText;
+    public Text UtilityTimer;
 
     private void Awake()
     {

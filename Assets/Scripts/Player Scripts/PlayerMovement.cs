@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
     private float _verticalMovement;
     private Transform _transform;
     private Animator _animator;
-    private string _playerTag = "Player";
     private Transform _textMeshTransform = null;
+    private PlayerAttributes _playerAttributes;
 
 
     // Start is called before the first frame update
@@ -25,7 +25,7 @@ public class PlayerMovement : MonoBehaviour
         _rigidbody2d = GetComponent<Rigidbody2D>();
         _transform = transform;
         _animator = GetComponent<Animator>();
-        GameObject player = GameObject.FindGameObjectWithTag(_playerTag);
+        _playerAttributes = GetComponent<PlayerAttributes>();
     }
 
     private void Start()

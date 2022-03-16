@@ -8,12 +8,12 @@ public class TargetMover : MoverBehaviour
 	public float Speed = 4.0f;
 	private Rigidbody2D _rigidbody2D = null;
 	private TextMesh _guardText;
-	public float _timetoClearText = 5.0f;
+	public float _timetoClearText = 3.0f;
 	private Transform _textMeshTransform = null;
+
 
 	void Start()
 	{
-		_timetoClearText = Time.time;
 	}
 
 	void Awake()
@@ -28,16 +28,11 @@ public class TargetMover : MoverBehaviour
 
 		if (Target == null)
 		{
+			_guardText.text = "";
 			return;
 		}
 
 		_guardText.text = "Halt!";
-
-		if (_timetoClearText <= 0.0f)
-		{
-			_timetoClearText = 5.0f;
-			_guardText.text = "";
-		}
 
 		Vector3 toTarget = Target.transform.position - transform.position;
 		toTarget.z = 0.0f;
@@ -51,12 +46,12 @@ public class TargetMover : MoverBehaviour
 			Vector3 localScale = transform.localScale;
 			localScale.x = -1.0f;
 			transform.localScale = localScale;
+
+			if (_textMeshTransform != null)
+			{
+				_textMeshTransform.localScale = localScale;
+			}
 		}
-
-
-
-
-
 
 	}
 }
