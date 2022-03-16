@@ -24,7 +24,9 @@ public class LightVisibility : MonoBehaviour
 		if (playerAttributes != null)
 		{
 			playerAttributes.VisibilityInc();
-			_uivisibility.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+			//_uivisibility.GetComponent<Image>().color = new Color32(255, 255, 255, 150);
+			Color32 color = _uivisibility.GetComponent<Image>().color;
+			color.a += 50;
 		}
 	}
 
@@ -40,7 +42,9 @@ public class LightVisibility : MonoBehaviour
 		if (playerAttributes != null)
 		{
 			playerAttributes.VisibilityDec();
-			_uivisibility.GetComponent<Image>().color = new Color32(255, 255, 255, 50);
+			//_uivisibility.GetComponent<Image>().color = new Color32(255, 255, 255, 50);
+			Color32 color = _uivisibility.GetComponent<Image>().color;
+			color.a -= 50;
 		}
 
 	}

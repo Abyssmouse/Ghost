@@ -9,7 +9,6 @@ public class TargetMover : MoverBehaviour
 	private Rigidbody2D _rigidbody2D = null;
 	private TextMesh _guardText;
 	public float _timetoClearText = 3.0f;
-	private Transform _textMeshTransform = null;
 
 
 	void Start()
@@ -41,17 +40,15 @@ public class TargetMover : MoverBehaviour
 		transform.position += toTarget * Speed * Time.deltaTime;
 		_animator.SetBool("IsWalking", true);
 
-		if (Target.transform.position.x <= transform.position.x)
-        {
-			Vector3 localScale = transform.localScale;
-			localScale.x = -1.0f;
-			transform.localScale = localScale;
+		float targetSide = Mathf.Sign(Target.transform.position.x - transform.position.x);
 
-			if (_textMeshTransform != null)
-			{
-				_textMeshTransform.localScale = localScale;
-			}
+		Vector3 localScale = transform.localScale;
+		localScale.x = targetSide;
+		transform.localScale = localScale;
+
+		if (_guardText != null)
+		{
+			_guardText.transform.localScale = localScale;
 		}
-
 	}
 }

@@ -26,6 +26,7 @@ public class DetectionTrigger : MonoBehaviour
 
 			if (behaviour.GetType() == System.Type.GetType(deactive))
 			{
+				behaviour.OnBehaviourDetached();
 				behaviour.enabled = false;
 				behaviour.Target = null;
 			}
@@ -33,6 +34,7 @@ public class DetectionTrigger : MonoBehaviour
 			{
 				behaviour.enabled = true;
 				behaviour.Target = target;
+				behaviour.OnBehaviourAttached();
 			}
 		}
 	}

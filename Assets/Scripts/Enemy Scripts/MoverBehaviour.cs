@@ -5,4 +5,8 @@ using UnityEngine;
 public class MoverBehaviour : MonoBehaviour
 {
 	public Component Target = null;
+
+	public virtual void OnBehaviourAttached() { }
+
+	public virtual void OnBehaviourDetached() { }
 }

@@ -62,4 +62,11 @@ public class HorizontalMover : MoverBehaviour
 		Gizmos.color = Color.gray;
 		Gizmos.DrawLine(_flipCheckStart.position, _flipCheckEnd.position);
 	}
+
+	public override void OnBehaviourAttached() { }
+
+	public override void OnBehaviourDetached()
+	{
+		_rigidbody2D.velocity = new Vector2(0, 0);
+	}
 }
