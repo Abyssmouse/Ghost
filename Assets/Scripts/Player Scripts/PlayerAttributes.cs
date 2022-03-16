@@ -1,28 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerAttributes : MonoBehaviour
 {
-    //public float PlayerVisibility = 0.0f;
-    private string _triggerTag = "DetectionTrigger";
-    private CircleCollider2D _circleCollider2D;
+	public float BasePlayerVisibility { get; } = 0.2f;
+	private float _playerVisibility = 0.2f;
+	private float _additionalVisibility = 0.0f;
+	private bool _isCloaked = false;
+	private GameObject _uivisibility = null;
 
-    private void Awake()
-    {
-        GameObject DetectionTrigger = GameObject.FindGameObjectWithTag(_triggerTag);
-        _circleCollider2D = DetectionTrigger.GetComponent<CircleCollider2D>();
-    }
+	private void Awake()
+	{
+		_playerVisibility = BasePlayerVisibility;
+		_uivisibility = GameObject.FindGameObjectWithTag("UIVisibility");
+	}
 
-    public void VisibilityInc()
-    {
-        //PlayerVisibility += 1.0f;
-        _circleCollider2D.radius += 1.0f;
-    }
+	public void SetAdditionalVisibiity(float visibility)
+	{
+		_playerVisibility = Mathf.Lerp(BasePlayerVisibility, 1.0f, visibility);
+		_additionalVisibility = visibility;
 
-    public void VisibilityDec()
-    {
-        //PlayerVisibility -= 1.0f;
-        _circleCollider2D.radius -= 1.0f;
-    }
+		if (_uivisibility != null)
+		{
+			_uivisibility.GetComponent<Image>().color = new Color(1.0f, 1.0f, 1.0f, _playerVisibility);
+		}
+	}
+	public float GetPlayerVisibility() { return _playerVisibility; }
+	public float GetAdditionalPlayerVisibility() { return _additionalVisibility; }
+
+	public void SetCloaked(bool cloaked) { _isCloaked = cloaked; }
+	public bool IsCloaked() { return _isCloaked; }
 }

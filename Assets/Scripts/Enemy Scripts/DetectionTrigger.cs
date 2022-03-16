@@ -1,19 +1,24 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DetectionTrigger : MonoBehaviour
 {
 	public string ActivatedScriptName = "TargetMover";
 	public string DeactivatedScriptName = "";
-	private CircleCollider2D _triggerRadius;
-		
+	private CircleCollider2D _triggerRadius = null;
+	private PlayerAttributes _playerAttributes = null;
+	public float BaseRadius = 4.0f;
+	public float MaxRadius = 6.0f;
+
 	private void Awake()
     {
 		_triggerRadius = GetComponent<CircleCollider2D>();
+		GameObject player = GameObject.FindGameObjectWithTag("Player");
+		if (player != null)
+		{
+			_playerAttributes = player.GetComponent<PlayerAttributes>();
+		}
 	}
-
-
+	
 	private void ToggleBehaviour(string active, string deactive, Component target)
 	{
 		MoverBehaviour[] monoBehaviours = transform.gameObject.transform.parent.GetComponents<MoverBehaviour>();
@@ -57,5 +62,17 @@ public class DetectionTrigger : MonoBehaviour
 		}
 
 		ToggleBehaviour(DeactivatedScriptName, ActivatedScriptName, other);
+	}
+
+	private void Update()
+	{
+		if (_playerAttributes != null && _triggerRadius != null)
+		{
+			if (_playerAttributes.IsCloaked())
+				_triggerRadius.radius = 0.0f;
+			else
+				_triggerRadius.radius = Mathf.Lerp(BaseRadius, MaxRadius, _playerAttributes.GetAdditionalPlayerVisibility());
+
+		}
 	}
 }
