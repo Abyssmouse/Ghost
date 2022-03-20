@@ -39,8 +39,7 @@ public class LightVisibility : MonoBehaviour
 		if (_target != null && _circle != null && _playerAttributes != null)
 		{
 			//calculate distance from trigger edge
-			Vector3 toCenter3D = _target.transform.position - _circle.transform.position;
-			Vector2 toCenter = new Vector2(toCenter3D.x, toCenter3D.y);
+			Vector2 toCenter = _target.transform.position - _circle.transform.position;
 			//distance from the center of the _circle
 			float distance = toCenter.magnitude;
 			//distanceNormalized is 0.0f when _target is in center of the _circle, and 1.0f if _target is exactly on the circle

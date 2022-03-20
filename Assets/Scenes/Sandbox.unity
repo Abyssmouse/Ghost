@@ -785,6 +785,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PatrolWaypoints
       objectReference: {fileID: 0}
+    - target: {fileID: 6292829755003882579, guid: 0ab8c75a0d4013b48a2bd3e461eca2b0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ab8c75a0d4013b48a2bd3e461eca2b0, type: 3}
 --- !u!1001 &6615008549045912379

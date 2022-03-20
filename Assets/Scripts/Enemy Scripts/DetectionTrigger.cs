@@ -8,6 +8,7 @@ public class DetectionTrigger : MonoBehaviour
 	private PlayerAttributes _playerAttributes = null;
 	public float BaseRadius = 4.0f;
 	public float MaxRadius = 6.0f;
+	[SerializeField] private LayerMask _raycastLayerMask;
 
 	private void Awake()
     {
@@ -44,14 +45,26 @@ public class DetectionTrigger : MonoBehaviour
 		}
 	}
 
-	private void OnTriggerEnter2D(Collider2D other)
+	private void OnTriggerStay2D(Collider2D other)
 	{
-		if (other.tag != "Player")
+		if (other.tag != "Player" || _triggerRadius == null)
 		{
 			return;
 		}
 
-		ToggleBehaviour(ActivatedScriptName, DeactivatedScriptName, other);
+		Vector2 rayStart = transform.position;
+		Vector2 rayDir = other.transform.position - transform.position;
+		float distanceToPlayer = rayDir.magnitude;
+		rayDir.Normalize();
+
+		//raycast in the direction of the player, with distance of distanceToPlayer or _triggerRadus.radius (whichever is closer)
+		RaycastHit2D hit = Physics2D.Raycast(rayStart, rayDir, Mathf.Min(distanceToPlayer, _triggerRadius.radius), _raycastLayerMask);
+		
+		//we're interested if there is nothing between this guard and the player (so the player is visible then)
+		if (hit.collider == null)
+		{
+			ToggleBehaviour(ActivatedScriptName, DeactivatedScriptName, other);
+		}
 	}
 
 	private void OnTriggerExit2D(Collider2D other)
