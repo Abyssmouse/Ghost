@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5763358528574133855}
   - component: {fileID: 5763358528574133854}
   - component: {fileID: 5763358528574133841}
-  - component: {fileID: 5763358528574133852}
+  - component: {fileID: 4307910957624420221}
   m_Layer: 0
   m_Name: Potion_Insight
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &5763358528574133852
+--- !u!114 &4307910957624420221
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,7 +119,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 5763358528574133840}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 580dc083352c3da48bcf86d59f76abfb, type: 3}
+  m_Script: {fileID: 11500000, guid: f7f60d6ee5496be43a8eded05a946102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeRemaining: 0
+  type: 2
+  time: 10

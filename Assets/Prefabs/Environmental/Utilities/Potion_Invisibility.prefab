@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4837687883724433886}
   - component: {fileID: 4837687883724433887}
   - component: {fileID: 4837687883724433872}
-  - component: {fileID: 1058886047925181005}
+  - component: {fileID: 4960734239083000774}
   m_Layer: 0
   m_Name: Potion_Invisibility
   m_TagString: Untagged
@@ -110,7 +110,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &1058886047925181005
+--- !u!114 &4960734239083000774
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4837687883724433873}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 261128caf175bf2448787872464e0ef8, type: 3}
+  m_Script: {fileID: 11500000, guid: f7f60d6ee5496be43a8eded05a946102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsInvisible: 0
-  timeRemaining: 0
+  type: 1
+  time: 10
