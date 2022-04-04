@@ -5,8 +5,15 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class HorizontalMover : MoverBehaviour
 {
-	[SerializeField] private Transform _flipCheckStart;
-	[SerializeField] private Transform _flipCheckEnd;
+	[SerializeField] private Transform _flipCheckStartTop;
+	[SerializeField] private Transform _flipCheckEndTop;
+
+	[SerializeField] private Transform _flipCheckStartMid;
+	[SerializeField] private Transform _flipCheckEndMid;
+
+	[SerializeField] private Transform _flipCheckStartBot;
+	[SerializeField] private Transform _flipCheckEndBot;
+
 	[SerializeField] private LayerMask _flipLayerMask;
 	[Space]
 	[SerializeField] private float _speed = 2.5f;
@@ -53,9 +60,12 @@ public class HorizontalMover : MoverBehaviour
 			}
 		}
 
-		bool shouldFlip = Physics2D.Linecast(_flipCheckStart.position, _flipCheckEnd.position, _flipLayerMask);
+		bool shouldFlip = Physics2D.Linecast(_flipCheckStartTop.position, _flipCheckEndTop.position, _flipLayerMask) 
+			|| Physics2D.Linecast(_flipCheckStartMid.position, _flipCheckEndMid.position, _flipLayerMask) 
+			|| Physics2D.Linecast(_flipCheckStartBot.position, _flipCheckEndBot.position, _flipLayerMask);
 
-		if(shouldFlip)
+
+		if (shouldFlip)
 		{
 			_xDirection *= -1.0f;
 
@@ -82,11 +92,17 @@ public class HorizontalMover : MoverBehaviour
 	}
 	private void OnDrawGizmos()
 	{
-		if(_flipCheckStart == null || _flipCheckEnd == null)
+		if (_flipCheckStartTop == null || _flipCheckEndTop == null)
+			return;
+		if (_flipCheckStartMid == null || _flipCheckEndMid == null)
+			return;
+		if (_flipCheckStartBot == null || _flipCheckEndBot == null)
 			return;
 
 		Gizmos.color = Color.gray;
-		Gizmos.DrawLine(_flipCheckStart.position, _flipCheckEnd.position);
+		Gizmos.DrawLine(_flipCheckStartTop.position, _flipCheckEndTop.position);
+		Gizmos.DrawLine(_flipCheckStartMid.position, _flipCheckEndMid.position);
+		Gizmos.DrawLine(_flipCheckStartBot.position, _flipCheckEndBot.position);
 	}
 
 	public override void OnBehaviourAttached() { }

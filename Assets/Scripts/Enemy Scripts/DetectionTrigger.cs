@@ -7,11 +7,13 @@ public class DetectionTrigger : MonoBehaviour
 	private CircleCollider2D _triggerRadius = null;
 	private PlayerAttributes _playerAttributes = null;
 	public float BaseRadius = 4.0f;
-	public float MaxRadius = 6.0f;
+	public float MaxRadius = 7.0f;
 	[SerializeField] private LayerMask _raycastLayerMask;
+	private SpriteRenderer _circleSpriteRenderer;
 
 	private void Awake()
     {
+		_circleSpriteRenderer = GetComponent<SpriteRenderer>();
 		_triggerRadius = GetComponent<CircleCollider2D>();
 		GameObject player = GameObject.FindGameObjectWithTag("Player");
 		if (player != null)
@@ -85,7 +87,18 @@ public class DetectionTrigger : MonoBehaviour
 				_triggerRadius.radius = 0.0f;
 			else
 				_triggerRadius.radius = Mathf.Lerp(BaseRadius, MaxRadius, _playerAttributes.GetAdditionalPlayerVisibility());
-
 		}
+
+		if (_playerAttributes != null && _circleSpriteRenderer != null)
+		{
+			if (_playerAttributes.IsCloaked())
+				_circleSpriteRenderer.enabled = false;
+			else
+            {
+				_circleSpriteRenderer.enabled = true;
+				_circleSpriteRenderer.size = new Vector2(Mathf.Lerp(BaseRadius, MaxRadius, _playerAttributes.GetAdditionalPlayerVisibility()) * 2, Mathf.Lerp(BaseRadius, MaxRadius, _playerAttributes.GetAdditionalPlayerVisibility()) * 2);
+			}		 
+		}
+
 	}
 }

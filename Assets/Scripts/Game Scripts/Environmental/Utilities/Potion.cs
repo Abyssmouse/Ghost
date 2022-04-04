@@ -28,10 +28,12 @@ public class Potion : MonoBehaviour
 
 					case EPotionType.Invisibility:
 						playerAttributes.AddCloakTime(time);
+						GameManager.Instance.UpdateTimer(time);
 						break;
 
 					case EPotionType.Insight:
 						playerAttributes.AddEnhancedVisibilityTime(time);
+						GameManager.Instance.UpdateTimer(time);
 						break;
 
 					default:

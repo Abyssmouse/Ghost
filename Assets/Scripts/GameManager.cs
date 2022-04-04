@@ -8,7 +8,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance;
     public Text LevelText;
-    public Text UtilityTimer;
+    public Text UtilityTimerText;
+
+    private float _timer = 0.0f;
 
     private void Awake()
     {
@@ -26,4 +28,20 @@ public class GameManager : MonoBehaviour
             }
     }
 
+    private void Update()
+    {
+        if (_timer <= 0)
+        {
+            _timer = 0.0f;
+            UtilityTimerText.text = " ";
+            return;
+        }
+        UpdateTimer(-Time.deltaTime);
+    }
+
+    public void UpdateTimer(float value)
+    {
+        _timer += value; 
+        UtilityTimerText.text = _timer.ToString("F1");
+    }
 }
